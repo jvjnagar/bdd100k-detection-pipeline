@@ -212,22 +212,24 @@ Repeat `--compare-with` to compare multiple models in a single run. A `model_com
 
 **Other flags:**
 
- Flag -> Default -> Description 
-`--score-thresh` -> `0.3` -> Confidence threshold for detections 
-`--images` -> `500` -> Max validation images to evaluate 
-`--compare-with` -> — -> Backend:weights spec (repeatable) 
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--score-thresh` | `0.3` | Confidence threshold for detections |
+| `--images` | `500` | Max validation images to evaluate |
+| `--compare-with` | — | Backend:weights spec (repeatable) |
 
 Outputs written to `output/evaluation/`:
 
-
-`quantitative_metrics.png` -> Precision / recall / F1 per class 
-`per_class_metrics.csv` -> Raw per-class numbers 
-`per_image_scores.csv` -> Per-image TP / FP / FN 
-`qualitative_*.png` -> GT vs predictions on good / medium / poor images 
-`failure_clustering.png` -> Missed objects by class × size 
-`evaluation_report.json` -> Full structured report 
-`model_comparison.png` -> Side-by-side F1/P/R chart (multi-model, if `--compare-with` used) 
-`model_comparison.csv` -> Tabular comparison across all evaluated models 
+| File | Description |
+|------|-------------|
+| `quantitative_metrics.png` | Precision / recall / F1 per class |
+| `per_class_metrics.csv` | Raw per-class numbers |
+| `per_image_scores.csv` | Per-image TP / FP / FN |
+| `qualitative_*.png` | GT vs predictions on good / medium / poor images |
+| `failure_clustering.png` | Missed objects by class × size |
+| `evaluation_report.json` | Full structured report |
+| `model_comparison.png` | Side-by-side F1/P/R chart (multi-model, if `--compare-with` used) |
+| `model_comparison.csv` | Tabular comparison across all evaluated models |
 
 ### Multi-model comparison (`compare`)
 
@@ -251,16 +253,19 @@ Use a local BDD100K-trained YOLO checkpoint (e.g. from `ultralytics train data=y
 
 **Flags:**
 
- Flag -> Default -> Description 
-`--images` -> `200` -> Validation images per model 
-`--score-thresh` -> `0.3` -> Confidence threshold |
-`--finetuned-weights` -> `output_/rtdetrv2_bdd100k/best.pth` -> RT-DETRv2 BDD checkpoint |
-`--yolo-weights` -> `yolov8s.pt` -> YOLO checkpoint (auto-downloaded) |
-`--qual-images` -> `6` -> Images in the qualitative grid |
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--images` | `200` | Validation images per model |
+| `--score-thresh` | `0.3` | Confidence threshold |
+| `--finetuned-weights` | `output_/rtdetrv2_bdd100k/best.pth` | RT-DETRv2 BDD checkpoint |
+| `--yolo-weights` | `yolov8s.pt` | YOLO checkpoint (auto-downloaded) |
+| `--qual-images` | `6` | Images in the qualitative grid |
 
 Outputs written to `output/comparison/`:
 
-`quantitative_comparison.png` -> Grouped F1 / P / R bars for all models per class 
-`qualitative_comparison.png` -> Side-by-side grid: GT + each model's predictions on the same images 
-`summary.csv` -> Mean F1 / P / R and per-class F1 for every model 
-`comparison_report.json` -> Full per-class metrics for all models 
+| File | Description |
+|------|-------------|
+| `quantitative_comparison.png` | Grouped F1 / P / R bars for all models per class |
+| `qualitative_comparison.png` | Side-by-side grid: GT + each model's predictions on the same images |
+| `summary.csv` | Mean F1 / P / R and per-class F1 for every model |
+| `comparison_report.json` | Full per-class metrics for all models |
