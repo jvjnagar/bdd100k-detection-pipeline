@@ -1,0 +1,21 @@
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+dash>=2.11.0
+Pillow>=9.5.0
+tqdm>=4.65.0
+opencv-python-headless>=4.8.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# RT-DETRv2 (lyuwenyu/RT-DETR) framework dependencies
+PyYAML
+scipy
+pycocotools
+faster-coco-eval
+tensorboard
+
+# YOLO comparison backend (ultralytics auto-downloads COCO-pretrained weights)
+ultralytics>=8.0.0

@@ -1,0 +1,15 @@
+[project]
+name = "bdd100k-analysis"
+version = "1.0.0"
+description = "BDD100K Object Detection Dataset Analysis, Model Training & Evaluation"
+requires-python = ">=3.11"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.pylint.messages_control]
+disable = ["C0114"]
+
+[tool.pylint.format]
+max-line-length = 88
