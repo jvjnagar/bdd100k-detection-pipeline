@@ -10,20 +10,17 @@
 | **Fine-tuned checkpoint** | `output_/rtdetrv2_bdd100k/best.pth` (1 epoch, 200 images, smoke test) |
 | **DataLoader** | `src/model/data_loader.py` — custom `torch.utils.data.Dataset` + weighted sampler |
 | **Training script** | `train.py` — explicit PyTorch loop (AdamW, EMA, GradScaler, Hungarian loss) |
-| **Notebook** | `notebooks/model_training.ipynb` — end-to-end demo |
 | **COCO → BDD transfer** | 8/10 classes map directly; `rider` and `traffic sign` require fine-tuning |
 
 ---
 
 ## Why RT-DETRv2
 
-The task specifies using PyTorch code instead of Ultralytics. That single constraint is
-the deciding factor:
+The task specifies using PyTorch code instead of Ultralytics.
 
 | Candidate | Pure-PyTorch pretrained weights |
 |-----------|----------------------------------|
 | YOLOv8 | Weights and all pre/post-processing ship inside the `ultralytics` package. Using them in plain PyTorch requires re-implementing the anchor-free head and DFL decode — fragile. |
-| YOLOv11 | Same — it is an Ultralytics-native release with no first-party non-Ultralytics path. |
 | **RT-DETRv2** | **First-class plain PyTorch** via the official `lyuwenyu/RT-DETR` repo. No Ultralytics at any point in the inference or training path. |
 
 Beyond availability, RT-DETRv2 is architecturally well-suited for BDD100K:
